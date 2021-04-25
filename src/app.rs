@@ -951,6 +951,15 @@ impl App {
     pub fn on_left_key(&mut self) {
         if !self.is_in_dialog() {
             match self.current_widget.widget_type {
+                BottomWidgetType::Proc => {
+                    if let Some(proc_widget_state) = self
+                        .proc_state
+                        .get_mut_widget_state(self.current_widget.widget_id)
+                    {
+                        proc_widget_state.horizontal_scroll_offset =
+                            proc_widget_state.horizontal_scroll_offset.saturating_sub(1);
+                    }
+                }
                 BottomWidgetType::ProcSearch => {
                     let is_in_search_widget = self.is_in_search_widget();
                     if let Some(proc_widget_state) = self
@@ -1022,6 +1031,18 @@ impl App {
     pub fn on_right_key(&mut self) {
         if !self.is_in_dialog() {
             match self.current_widget.widget_type {
+                BottomWidgetType::Proc => {
+                    if let Some(proc_widget_state) = self
+                        .proc_state
+                        .get_mut_widget_state(self.current_widget.widget_id)
+                    {
+                        if (proc_widget_state.horizontal_scroll_offset + 1)
+                            < proc_widget_state.columns.get_enabled_columns_len()
+                        {
+                            proc_widget_state.horizontal_scroll_offset += 1;
+                        }
+                    }
+                }
                 BottomWidgetType::ProcSearch => {
                     let is_in_search_widget = self.is_in_search_widget();
                     if let Some(proc_widget_state) = self

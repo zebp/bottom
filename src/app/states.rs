@@ -472,6 +472,7 @@ pub struct ProcWidgetState {
     pub is_tree_mode: bool,
     pub table_width_state: CanvasTableWidthState,
     pub requires_redraw: bool,
+    pub horizontal_scroll_offset: usize,
 }
 
 impl ProcWidgetState {
@@ -525,6 +526,7 @@ impl ProcWidgetState {
             is_tree_mode,
             table_width_state: CanvasTableWidthState::default(),
             requires_redraw: false,
+            horizontal_scroll_offset: 0,
         }
     }
 

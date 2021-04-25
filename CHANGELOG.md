@@ -55,6 +55,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [#455](https://github.com/ClementTsang/bottom/pull/455): Added a mount point filter for the disk widget. Also tweaked how the filter system works - see the PR for details.
 
+- [#460](https://github.com/ClementTsang/bottom/pull/460): Removed a gap between the CPU section and other columns in basic mode.
+
 ## Bug Fixes
 
 - [#416](https://github.com/ClementTsang/bottom/pull/416): Fixes grouped vs ungrouped modes in the processes widget having inconsistent spacing.
@@ -64,6 +66,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [#423](https://github.com/ClementTsang/bottom/pull/423): Fixes disk encryption causing the disk widget to fail or not properly map I/O statistics.
 
 - [#425](https://github.com/ClementTsang/bottom/pull/425): Fixed a bug allowing grouped mode in tree mode if already in grouped mode.
+
+- [#459](https://github.com/ClementTsang/bottom/pull/459): Fixed a bug with mouse bounding box checks and widgets.
 
 ## [0.5.7] - 2021-01-30
 
