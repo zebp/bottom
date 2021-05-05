@@ -12,7 +12,6 @@ use tui::{
 // use ordered_float::OrderedFloat;
 
 use canvas_colours::*;
-use components::*;
 use dialogs::*;
 use widgets::*;
 
@@ -31,7 +30,6 @@ use crate::{
 };
 
 pub mod canvas_colours;
-mod components;
 mod dialogs;
 mod drawing_utils;
 mod widgets;
