@@ -186,6 +186,7 @@ pub struct ProcColumn {
     /// The x start and end bounds for each header.
     pub column_header_x_locs: Option<Vec<(u16, u16)>>,
     pub column_mapping: HashMap<ProcessSorting, ColumnInfo>,
+    /// Used for determining sort window length.
     pub longest_header_len: u16,
     pub column_state: TableState,
     pub scroll_direction: ScrollDirection,
@@ -924,20 +925,4 @@ impl BatteryState {
 pub struct ParagraphScrollState {
     pub current_scroll_index: u16,
     pub max_scroll_index: u16,
-}
-
-#[derive(Default)]
-pub struct ConfigState {
-    pub current_category_index: usize,
-    pub category_list: Vec<ConfigCategory>,
-}
-
-#[derive(Default)]
-pub struct ConfigCategory {
-    pub category_name: &'static str,
-    pub options_list: Vec<ConfigOption>,
-}
-
-pub struct ConfigOption {
-    pub set_function: Box<dyn Fn() -> anyhow::Result<()>>,
 }

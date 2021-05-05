@@ -21,3 +21,6 @@ pub use network_basic::NetworkBasicWidget;
 pub use network_graph::NetworkGraphWidget;
 pub use process_table::ProcessTableWidget;
 pub use temp_table::TempTableWidget;
+
+pub mod scroll_search_table;
+pub use scroll_search_table::*;

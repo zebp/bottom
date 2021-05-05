@@ -17,7 +17,8 @@ use layout_manager::*;
 pub use states::*;
 
 use crate::{
-    canvas, constants,
+    canvas::{self, canvas_colours::CanvasColours},
+    constants,
     options::Config,
     options::ConfigFlags,
     options::WidgetIdEnabled,
@@ -81,6 +82,33 @@ pub struct DataFilters {
 pub struct Filter {
     pub is_list_ignored: bool,
     pub list: Vec<regex::Regex>,
+}
+
+pub enum Screens {
+    Help,
+    KillDialog,
+    Main,
+}
+
+impl Default for Screens {
+    fn default() -> Self {
+        Screens::Main
+    }
+}
+
+/// Represents the application's state.
+pub struct AppState {
+    /// The currently selected widget ID.
+    pub selected_widget_id: u16,
+
+    /// What screen is currently showing.
+    pub current_screen: Screens,
+
+    /// Current colour palette.  Maybe merge with settings?
+    pub colours: CanvasColours,
+
+    /// Current app settings through either flags or the config file.
+    pub settings: AppConfigFields,
 }
 
 #[derive(TypedBuilder)]

@@ -396,7 +396,7 @@ impl ProcessTableWidget for Painter {
                                 }
                             } else {
                                 *current
-                            }
+                            }  
                         })
                         .collect::<Vec<_>>();
 
